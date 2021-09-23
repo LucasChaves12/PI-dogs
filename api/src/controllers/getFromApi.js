@@ -10,6 +10,7 @@ const getApi = async () => {
             height: el.height.metric,
             weight: el.weight.metric,
             life_span: el.life_span,
+            origin: el.origin,
             temperament: el.temperament,
             img: el.image.url
         }

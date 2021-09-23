@@ -1,0 +1,19 @@
+.dogImage {
+    border-radius: 10px;
+    width:250px; 
+    height:200px;
+    background-image: url('https://c.tenor.com/uj4Cnt7RVE0AAAAM/fatdog-dog.gif');
+}
+
+.dogTitle {
+    text-align: center; 
+    margin-block-start: 10px;
+    margin-block-end: 10px; 
+    margin: 5px;
+    font-size: 26px;
+}
+.dogTemperament{
+    word-spacing: 6px;
+    font-size: 14px;
+    margin: 5px
+}

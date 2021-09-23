@@ -12,7 +12,7 @@ const getDogDetail = async (type, el) => {
             return resultDogs.filter((val) => val.name === el)
 
         case 'GET_ID':
-            return resultDogs.filter((val) => val.id.toString() === el)
+            return resultDogs.filter((val) => val.id.toString() === el.toString())
 
         default:
             return resultDogs

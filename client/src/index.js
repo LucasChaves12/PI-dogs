@@ -4,18 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
-import * as dotenv from 'dotenv';
+import axios from 'axios'
+import store from './Redux/store'
 
-dotenv.config();
-const { REACT_APP_SERVER_HOST_API } = process.env;
 
-axios.defaults.baseURL = REACT_APP_SERVER_HOST_API;
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );

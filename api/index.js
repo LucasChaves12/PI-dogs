@@ -29,14 +29,14 @@ conn.sync({ force: true }).then(() => {
     .then(response => response.data)
     .then(json => {
       json && json.forEach(breed => {
-        let temps = breed.temperament && breed.temperament.split(', ');
-        temps && temps.forEach(t => temp.add(t));
+        let temps = breed.temperament && breed.temperament.split(', ')
+        temps && temps.forEach(t => temp.add(t))
       })
       let arrayTemp = Array.from(temp)
       Temperament.bulkCreate(arrayTemp.map(t => ({ name: t })))
     })
     .then(console.log('Temperaments (re)imported to DB'))
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });

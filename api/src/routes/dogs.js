@@ -35,18 +35,23 @@ router.post('/dogs', async (req,res) => {
         weight,
         life_span,
         temperament,
+        createdInDb,
         img
     } = req.body
     try {
-     Breed.create({
+     let dogCreated = await Breed.create({
         name,
         height,
         weight,
         life_span,
+        createdInDb,
         img
     })
-    .then((breed) => breed.setTemperaments(temperament))
-    return res.status(200).send( 'message: created' )
+    let temperamentDb = await Temperament.findAll({
+        where: { name: temperament}
+    })
+    await dogCreated.setTemperaments(temperamentDb)
+    return res.status(200).send('Creado con exito')
 } catch (err) {
     console.error(err)
 }

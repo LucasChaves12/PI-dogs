@@ -17,5 +17,5 @@ module.exports = (sequelize) => {
         primaryKey: false,
         allowNull: false
     }
- })
+ },{ timestamps:false,})
 }
