@@ -15,7 +15,7 @@ const Home = () => {
     const allDogs = useSelector((state)=> state.dogs)
     const [orden, setOrden]= useState('')
     const [currentPage, setCurrentPage] = useState(1)
-    const [dogsPerPage, setDogsPerPage] = useState(8)
+    const [dogsPerPage, setDogsPerPage] = useState(10)
     const indexOfLastDog = currentPage * dogsPerPage
     const indexOfFirstDog = indexOfLastDog - dogsPerPage 
     const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog)

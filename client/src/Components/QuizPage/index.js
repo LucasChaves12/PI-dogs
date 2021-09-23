@@ -17,6 +17,8 @@ const QuizPage = () => {
     const [restart, setRestart] = useState(false)
     const [dogSet, setDogSet] = useState([])
     const [gotImages, setGotImages] = useState(false)
+
+    const dogimg = useSelector((state)=> state.detail )
     
     const allDogs = useSelector((state)=> state.dogs)
     const dispatch = useDispatch()
@@ -24,6 +26,7 @@ const QuizPage = () => {
       getDogSet()
       newGame()
       dispatch(getDogs)
+      /* dispatch(getDetail) */
     }, []);
 
     const getRandomInt =(max) =>{
@@ -108,9 +111,12 @@ const QuizPage = () => {
       }
       setDone(true)
     }
-
     const getImage = async (info) => {
       let result = await axios.get(`https://api.thedogapi.com/v1/images/search?breed_id=${info.id}`)
+      /* dispatch(getDetail) */
+      /* console.log(allDogs) */
+      /* let result = await axios.get("dogs/" + info.id)
+      console.log(result) */
       return result.data[0].url
     }
     return ( 

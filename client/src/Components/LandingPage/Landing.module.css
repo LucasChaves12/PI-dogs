@@ -41,7 +41,7 @@
   position: absolute;
   color: black;
   backdrop-filter: blur(16px);
-  height: 50vh;
+  height: 32vh;
   border-radius: 12px;
   margin-left: 38%;
 }
